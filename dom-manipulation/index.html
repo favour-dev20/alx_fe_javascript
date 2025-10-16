@@ -8,25 +8,29 @@
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <!-- Quote display -->
+  <!-- Quote Display -->
   <div id="quoteDisplay"></div>
-
-  <!-- Show new quote button (Task 0 expects id="newQuote") -->
   <button id="newQuote">Show New Quote</button>
 
-  <!-- Add-quote form will be created dynamically by createAddQuoteForm() -->
+  <!-- Form Container (for createAddQuoteForm) -->
   <div id="formContainer"></div>
 
-  <!-- Category filter (Task 2) -->
+  <!-- Category Filter -->
   <label for="categoryFilter">Filter:</label>
   <select id="categoryFilter" onchange="filterQuotes()">
     <option value="all">All Categories</option>
   </select>
 
-  <!-- Import/Export (Task 1) -->
+  <!-- Import/Export JSON -->
   <div>
     <button id="exportBtn">Export Quotes (JSON)</button>
     <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+  </div>
+
+  <!-- ====== SYNC SECTION (Task 3) ====== -->
+  <div id="syncSection" style="margin-top:20px;">
+    <button id="syncNow">Sync with Server</button>
+    <p id="syncStatus">Last Sync: Never</p>
   </div>
 
   <script src="script.js"></script>
